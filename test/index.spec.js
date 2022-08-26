@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer");
 
 describe('NuxtLogo', () => {
   test('is a Vue instance', async () => {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ ignoreDefaultArgs: ['--disable-extensions'] });
     const page = await browser.newPage();    //跳转到我们想要的地址去
     await page.goto('http://localhost:3000')
     const bodyHandle = await page.$('body');
